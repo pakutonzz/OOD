@@ -43,10 +43,10 @@ class AVL_Tree:
 
     def rotateLeft(self, z):
         y = z.right
-        T2 = y.left
+        temp = y.left
 
         y.left = z
-        z.right = T2
+        z.right = temp
 
         z.height = 1 + max(self.getHeight(z.left), self.getHeight(z.right))
         y.height = 1 + max(self.getHeight(y.left), self.getHeight(y.right))
@@ -55,10 +55,10 @@ class AVL_Tree:
 
     def rotateRight(self, z):
         y = z.left
-        T3 = y.right
+        temp = y.right
 
         y.right = z
-        z.left = T3
+        z.left = temp
 
         z.height = 1 + max(self.getHeight(z.left), self.getHeight(z.right))
         y.height = 1 + max(self.getHeight(y.left), self.getHeight(y.right))
